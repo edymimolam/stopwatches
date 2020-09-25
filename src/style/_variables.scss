@@ -1,0 +1,32 @@
+/*
+* === FONTS ===
+*/
+
+$font-family-main: GothamPro, Arial, sans-serif;
+$font-size-main: 2.2rem;
+
+/*
+* === COLORS ===
+*/
+
+$color-bg-main: #353638;
+$color-bg-light: #696969;
+$color-primary: #9e9e9e;
+$color-accent: #ffffff;
+
+/*
+* === SIZES ===
+*/
+
+$size-tablet: 768px;
+$size-desktop: 1024px;
+
+$size-stopwatch-item-width: 22.5rem;
+$size-stopwatch-item-height: 12rem;
+$size-stopwatch-item-controls-width: 8.5rem;
+
+$size-content-margin-top: 7.2rem;
+$size-content-grid-gap: 4.5rem 5rem;
+$size-content-width-max-desktop: 77.5rem;
+$size-content-width-max-tablet: 50rem;
+$size-content-width-max-phone: $size-stopwatch-item-width;
