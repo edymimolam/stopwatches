@@ -1,12 +1,23 @@
 <template>
   <div :class="['container', { active: stopwatch.isRunning }]">
     <div class="time">
-      <span>59</span>
-      <span>30</span>
-      <span>2</span>
+      <span>{{ stopwatch.time.seconds }}</span>
+      <span v-if="stopwatch.time.minutes !== null">{{
+        stopwatch.time.minutes
+      }}</span>
+      <span v-if="stopwatch.time.hours !== null">{{
+        stopwatch.time.hours
+      }}</span>
     </div>
     <div class="controls">
       <BaseButton
+        v-if="stopwatch.isRunning"
+        variant="pause"
+        @click="stopwatch.pause"
+        :accent="stopwatch.isRunning"
+      />
+      <BaseButton
+        v-else
         variant="play"
         @click="stopwatch.run"
         :accent="stopwatch.isRunning"
