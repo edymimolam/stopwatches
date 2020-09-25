@@ -1,12 +1,12 @@
 <template>
   <div :class="['container', { active: stopwatch.isRunning }]">
     <div class="time">
-      <span>{{ stopwatch.time.seconds }}</span>
+      <span>{{ stopwatch.time.seconds | prependZero }}</span>
       <span v-if="stopwatch.time.minutes !== null">{{
-        stopwatch.time.minutes
+        stopwatch.time.minutes | prependZero
       }}</span>
       <span v-if="stopwatch.time.hours !== null">{{
-        stopwatch.time.hours
+        stopwatch.time.hours | prependZero
       }}</span>
     </div>
     <div class="controls">
@@ -34,6 +34,11 @@
 <script>
   import BaseButton from "./BaseButton";
   export default {
+    filters: {
+      prependZero: function(num) {
+        return ("0" + String(num)).slice(-2);
+      },
+    },
     props: {
       stopwatch: {
         type: Object,
