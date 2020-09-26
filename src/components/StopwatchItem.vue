@@ -13,17 +13,20 @@
       <BaseButton
         v-if="stopwatch.isRunning"
         variant="pause"
+        title="pause stopwatch"
         @click="stopwatch.pause"
         :accent="stopwatch.isRunning"
       />
       <BaseButton
         v-else
         variant="play"
+        title="start stopwatch"
         @click="stopwatch.run"
         :accent="stopwatch.isRunning"
       />
       <BaseButton
         variant="stop"
+        title="stop stopwatch"
         @click="stopwatch.stop"
         :accent="stopwatch.isRunning"
       />

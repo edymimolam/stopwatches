@@ -1,11 +1,17 @@
 <template>
-  <button :class="[variant, { accent }, 'button']" v-on="$listeners"></button>
+  <button :class="[variant, { accent }, 'button']" v-on="$listeners">
+    <span class="sr-only">{{ title }}</span>
+  </button>
 </template>
 
 <script>
   export default {
     props: {
       variant: {
+        type: String,
+        default: "",
+      },
+      title: {
         type: String,
         default: "",
       },
@@ -27,6 +33,10 @@
     padding: 0;
     margin: 0;
     cursor: pointer;
+    transition: $transition-fast;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   .stop {

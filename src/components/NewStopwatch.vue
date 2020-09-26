@@ -1,6 +1,6 @@
 <template>
   <button class="container" v-on="$listeners">
-    <BaseButton variant="add" />
+    <BaseButton variant="add" title="create stopwatch" />
   </button>
 </template>
 
